@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    form {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width: 350px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    textarea {
+      resize: none;
+      height: 70px;
+    }
+    small {
+      color: gray;
+      font-size: 12px;
+    }
+    .error {
+      border: 2px solid red;
+    }
+    .toggle-btn {
+      margin-top: 5px;
+      background-color: #ddd;
+      border: none;
+      padding: 6px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button[type="submit"] {
+      margin-top: 15px;
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="regForm">
+    <h2>Registration Form</h2>
+
+    <label for="username">Username:</label>
+    <input type="text" id="username" placeholder="Enter username">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="Enter email">
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" placeholder="Enter password">
+
+    <label for="confirm">Confirm Password:</label>
+    <input type="password" id="confirm" placeholder="Re-enter password">
+
+    <button type="button" class="toggle-btn" id="togglePwd">Show / Hide Password</button>
+
+    <label>Gender:</label>
+    <input type="radio" name="gender" value="Male"> Male
+    <input type="radio" name="gender" value="Female"> Female
+
+    <label>Interests:</label>
+    <input type="checkbox" name="interest" value="HTML"> HTML
+    <input type="checkbox" name="interest" value="CSS"> CSS
+    <input type="checkbox" name="interest" value="JavaScript"> JavaScript
+
+    <label for="bio">Bio:</label>
+    <textarea id="bio" maxlength="100" placeholder="Write something about yourself..."></textarea>
+    <small id="count">0/100</small>
+
+    <button type="submit">Register</button>
+  </form>
+
+  <script>
+    // 🔹 Live Character Counter
+    $("#bio").on("input", function() {
+      $("#count").text($(this).val().length + "/100");
+    });
+
+    // 🔹 Password Show/Hide
+    $("#togglePwd").click(function() {
+      const type = $("#password").attr("type") === "password" ? "text" : "password";
+      $("#password, #confirm").attr("type", type);
+    });
+
+    // 🔹 Form Validation
+    $("#regForm").submit(function(e) {
+      e.preventDefault();
+      let valid = true;
+
+      $("input, textarea").removeClass("error");
+
+      // Check empty fields
+      $("#username, #email, #password, #confirm, #bio").each(function() {
+        if ($(this).val().trim() === "") {
+          $(this).addClass("error");
+          valid = false;
+        }
+      });
+
+      // Check password match
+      if ($("#password").val() !== $("#confirm").val()) {
+        alert("Passwords do not match!");
+        $("#password, #confirm").addClass("error");
+        valid = false;
+      }
+
+      // Check gender
+      if ($("input[name='gender']:checked").length === 0) {
+        alert("Please select your gender.");
+        valid = false;
+      }
+
+      // Check interests
+      if ($("input[name='interest']:checked").length === 0) {
+        alert("Please select at least one interest.");
+        valid = false;
+      }
+
+      // Success message
+      if (valid) {
+        alert("Registration Successful!");
+        $("#regForm")[0].reset();
+        $("#count").text("0/100");
+      } else {
+        alert("Please complete all required fields.");
+      }
+    });
+  </script>
+
+</body>
+</html>

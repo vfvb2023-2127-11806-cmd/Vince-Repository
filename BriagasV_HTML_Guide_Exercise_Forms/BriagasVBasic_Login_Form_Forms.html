@@ -1,0 +1,143 @@
+<form>
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" required><br><br>
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" required><br><br>
+
+  <button type="submit">Login</button>
+</form>
+
+<form>
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" placeholder="Enter your email">
+</form>
+
+<p>Choose your role:</p>
+<input type="radio" id="student" name="role" value="student">
+<label for="student">Student</label>
+<input type="radio" id="teacher" name="role" value="teacher">
+<label for="teacher">Teacher</label>
+
+<p>Select your interests:</p>
+<input type="checkbox" id="html" name="interest" value="HTML">
+<label for="html">HTML</label>
+<input type="checkbox" id="css" name="interest" value="CSS">
+<label for="css">CSS</label>
+
+<label for="country">Country:</label>
+<select id="country" name="country">
+  <option value="ph">Philippines</option>
+  <option value="us">United States</option>
+  <option value="jp">Japan</option>
+</select>
+
+<label for="message">Your Message:</label><br>
+<textarea id="message" name="message" rows="4" cols="40"></textarea>
+
+<input type="text" name="username" required minlength="3" maxlength="10">
+<input type="email" name="email" required>
+
+<form id="loginForm">
+  <input type="text" id="username" required>
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  alert("Form submitted!");
+});
+</script>
+
+<textarea id="bio" maxlength="100"></textarea>
+<p id="count">0/100</p>
+
+<script>
+const bio = document.getElementById("bio");
+const count = document.getElementById("count");
+
+bio.addEventListener("input", function() {
+  count.textContent = bio.value.length + "/100";
+});
+</script>
+
+<input type="password" id="pwd">
+<button type="button" onclick="togglePwd()">Show/Hide</button>
+
+<script>
+function togglePwd() {
+  const pwd = document.getElementById("pwd");
+  pwd.type = pwd.type === "password" ? "text" : "password";
+}
+</script>
+
+<form id="myForm">
+  <input type="text" required>
+  <button type="submit">Submit</button>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$("#myForm").submit(function(event){
+  event.preventDefault();
+  alert("Form submitted with jQuery!");
+});
+</script>
+
+<input type="password" id="pwd">
+<button id="toggle">Show/Hide</button>
+
+<script>
+$("#toggle").click(function(){
+  let pwd = $("#pwd");
+  pwd.attr("type", pwd.attr("type") === "password" ? "text" : "password");
+});
+</script>
+
+<textarea id="bio" maxlength="100"></textarea>
+<p id="count">0/100</p>
+
+<script>
+$("#bio").on("input", function(){
+  $("#count").text($(this).val().length + "/100");
+});
+</script>
+
+<form id="login">
+  <input type="text" id="user" placeholder="Username"><br>
+  <input type="password" id="pass" placeholder="Password"><br>
+  <button type="submit">Login</button>
+</form>
+
+<script>
+$("#login").submit(function(e){
+  e.preventDefault();
+  if($("#user").val() === "" || $("#pass").val() === ""){
+    alert("Please fill in all fields");
+  } else {
+    alert("Login successful!");
+  }
+});
+</script>
+
+<style>
+.error { border: 2px solid red; }
+</style>
+
+<form id="formCheck">
+  <input type="text" id="name" placeholder="Name">
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+$("#formCheck").submit(function(e){
+  e.preventDefault();
+  if($("#name").val() === ""){
+    $("#name").addClass("error");
+  } else {
+    $("#name").removeClass("error");
+    alert("Form submitted!");
+  }
+});
+</script>
