@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #240000, #470000, #f80000);
+      color: #E6F2FF;
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background-color: rgba(40, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #ff0000;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #E6F2FF;
+      margin-left: 30px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff0000;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 40px;
+      gap: 60px;
+      background: radial-gradient(circle at right, #ff0000, #470000);
+      border-radius: 0 0 50px 50px;
+    }
+
+    .hero-text {
+      flex: 1 1 400px;
+      max-width: 500px;
+    }
+
+    .hero-text h2 {
+      font-size: 2.8rem;
+      color: #E6F2FF;
+      margin-bottom: 10px;
+    }
+
+    .hero-text h3 {
+      color: #ff0000;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 30px;
+      color: #dcefff;
+    }
+
+    .btn-group a {
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 25px;
+      margin-right: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background-color: #ff0000;
+      color: #240000;
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      background-color: #ff0000;
+    }
+
+    .btn-outline {
+      border: 2px solid #ff0000;
+      color: #240000;
+    }
+
+    .btn-outline:hover {
+      background-color: #ff0000;
+      color: #240000;
+    }
+
+    .hero img {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 30px rgba(63, 0, 0, 0.6);
+      border: 4px solid #470000;
+    }
+
+    .gallery {
+      padding: 80px 40px;
+      text-align: center;
+    }
+
+    .gallery h2 {
+      font-size: 2.2rem;
+      color: #E6F2FF;
+      margin-bottom: 40px;
+    }
+
+    .artworks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .art-card {
+      background-color: rgba(70, 0, 0, 0.7);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .art-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .art-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .art-card h3 {
+      padding: 15px;
+      font-size: 1.1rem;
+      color: #E6F2FF;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background-color: rgba(53, 0, 0, 0.8);
+      color: #e3a9a9;
+      font-size: 0.9rem;
+      border-top: 1px solid #800000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+  
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Portfolio</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Hi, I'm Vince Franquine V. Briagas</h2>
+      <h3>The Artist</h3>
+      <p>
+        I am a visual artist who explores the fusion of traditional and digital artistry. My works include
+        <b>digital paintings</b>, <b>oil paintings</b>, <b>graphite artworks</b>, and <b>colored pencil art</b>.
+        Each piece I create reflects my deep passion for visual storytelling, emphasizing emotion, depth,
+        and the human connection through form, color, and light.
+      </p>
+      <div class="btn-group">
+        <a href="#" class="btn-primary">View My Works</a>
+        <a href="#" class="btn-outline">Contact Me</a>
+      </div>
+    </div>
+
+    <img src="c:\Users\Vince V. Briagas\OneDrive\Documents\Vince-Repository\BriagasV_Portfolio\vince botb.jpg" alt=>
+  </section>
+
+  <section class="gallery">
+    <h2>Sample Artworks</h2>
+    <div class="artworks">
+      <div class="art-card"><img src="c:\Users\Vince V. Briagas\OneDrive\Documents\Vince-Repository\BriagasV_Portfolio\Color Pencil Art.jpg" alt=""><h3>Isabela Madrigal Color Pencil</h3></div>
+      <div class="art-card"><img src="c:\Users\Vince V. Briagas\OneDrive\Documents\Vince-Repository\BriagasV_Portfolio\Digital Art.jpg" alt=""><h3>ML Digital Anime style</h3></div>
+      <div class="art-card"><img src="c:\Users\Vince V. Briagas\OneDrive\Documents\Vince-Repository\BriagasV_Portfolio\Digital Paint.jpg" alt=""><h3>Bia Digital Paint</h3></div>
+      <div class="art-card"><img src="c:\Users\Vince V. Briagas\OneDrive\Documents\Vince-Repository\BriagasV_Portfolio\Graphite Pencil Art.jpg" alt=""><h3>OhMyV33NUS graphite</h3></div>
+      <div class="art-card"><img src="c:\Users\Vince V. Briagas\OneDrive\Documents\Vince-Repository\BriagasV_Portfolio\Painting Fallen Angel.jpg" alt=""><h3>Fallen Angel Painting</h3></div>
+      <div class="art-card"><img src="c:\Users\Vince V. Briagas\OneDrive\Documents\Vince-Repository\BriagasV_Portfolio\Painting.jpg" alt=""><h3>Cabin House Painting</h3></div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Vince Franquine V. Briagas — All Rights Reserved
+  </footer>
+</body>
+</html>
+
+
